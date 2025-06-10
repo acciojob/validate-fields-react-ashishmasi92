@@ -23,24 +23,13 @@ const App = () => {
 
 
 
-  function validation() {
-
-    let errorMessage = ""
-   if(!username&& !password){
-    setError("both field are required")
-    return false
-   }
-   else if(!username){
-setError("username must not be empty")
-    return false 
-  }
-   else if(!password){
-  setError("password must not be empty")
-    return false
-   }
-   setError("")
-  return true
-
+   function validation() {
+    if (!username || !password) {
+      setError("Both username and password are required.");
+      return false;
+    }
+    setError("");
+    return true;
   }
 
   function handleSubmit(e) {
